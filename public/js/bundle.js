@@ -5785,27 +5785,45 @@ if (signupForm) {
 }
 
 if (logOutBtn) logOutBtn.addEventListener('click', _login.logout);
-if (userDataForm) userDataForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  var form = new FormData();
-  form.append('name', document.getElementById('name').value);
-  form.append('email', document.getElementById('email').value);
-  form.append('photo', document.getElementById('photo').files[0]);
-  console.log(form);
-  (0, _updateSettings.updateSettings)(form, 'data');
-});
-if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
+if (userDataForm) userDataForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
-    var passwordCurrent, password, passwordConfirm;
+    var form;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
+        case 0:
+          e.preventDefault();
+          document.querySelector('.btn--save-settings').textContent = 'Updating...';
+          form = new FormData();
+          form.append('name', document.getElementById('name').value);
+          form.append('email', document.getElementById('email').value);
+          form.append('photo', document.getElementById('photo').files[0]);
+          // console.log(form);
+          _context.next = 8;
+          return (0, _updateSettings.updateSettings)(form, 'data');
+        case 8:
+          document.querySelector('.btn--save-settings').textContent = 'SAVE SETTINGS';
+        case 9:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}());
+if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
+    var passwordCurrent, password, passwordConfirm;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
         case 0:
           e.preventDefault();
           document.querySelector('.btn--save-password').textContent = 'Updating...';
           passwordCurrent = document.getElementById('password-current').value;
           password = document.getElementById('password').value;
           passwordConfirm = document.getElementById('password-confirm').value;
-          _context.next = 7;
+          _context2.next = 7;
           return (0, _updateSettings.updateSettings)({
             passwordCurrent: passwordCurrent,
             password: password,
@@ -5818,12 +5836,12 @@ if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/f
           document.getElementById('password-confirm').value = '';
         case 11:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
-    }, _callee);
+    }, _callee2);
   }));
-  return function (_x) {
-    return _ref.apply(this, arguments);
+  return function (_x2) {
+    return _ref2.apply(this, arguments);
   };
 }());
 if (bookBtn) bookBtn.addEventListener('click', function (e) {
@@ -5856,7 +5874,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61186" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64564" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
