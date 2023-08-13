@@ -19,7 +19,7 @@ block content
     section.section-header
         .header__hero
             .header__hero-overlay &nbsp;
-            img.header__hero-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+            img.header__hero-img(src=`https://res.cloudinary.com/dmhp6izbz/image/upload/v1691911500/journey-plan/tours/${tour.imageCover}`, alt=`${tour.name}`)
 
         .heading-box
             h1.heading-primary
@@ -49,7 +49,7 @@ block content
                     h2.heading-secondary.ma-bt-lg Your tour guides
                     each guide in tour.guides
                         .overview-box__detail
-                            img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
+                            img.overview-box__img(src=`https://res.cloudinary.com/dmhp6izbz/image/upload/v1691910388/journey-plan/users/${guide.photo}`, alt=`${guide.name}`)
                             - if (guide.role === 'lead-guide')
                                 span.overview-box__label Lead guide
                             - if(guide.role === 'guide')
@@ -65,7 +65,7 @@ block content
     section.section-pictures
         each img, i in tour.images
             .picture-box
-                img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
+                img.picture-box__img(src=`https://res.cloudinary.com/dmhp6izbz/image/upload/v1691910388/journey-plan/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
 
     section.section-map
         #map(data-locations=`${JSON.stringify(tour.locations)}`)
@@ -78,9 +78,9 @@ block content
     section.section-cta
         .cta
             .cta__img.cta__img--logo
-                img(src='/img/logo-white.png', alt='Natours logo')
-            img.cta__img.cta__img--1(src=`/img/tours/${tour.images[1]}`, alt='Tour Picture')
-            img.cta__img.cta__img--2(src=`/img/tours/${tour.images[2]}`, alt='Tour Picture')
+                img(src='/img/logo-white.png', alt='Journey-Planner logo')
+            img.cta__img.cta__img--1(src=`https://res.cloudinary.com/dmhp6izbz/image/upload/v1691910388/journey-plan/tours/${tour.images[1]}`, alt='Tour Picture')
+            img.cta__img.cta__img--2(src=`https://res.cloudinary.com/dmhp6izbz/image/upload/v1691910388/journey-plan/tours/${tour.images[2]}`, alt='Tour Picture')
             .cta__content
                 h2.heading-secondary What are you waiting for?
                 p.cta__text= `${tour.duration} days. 1 adventure. Infinite memories. Make it yours today!`
