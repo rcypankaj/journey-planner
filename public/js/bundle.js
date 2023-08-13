@@ -5797,12 +5797,12 @@ if (userDataForm) userDataForm.addEventListener('submit', /*#__PURE__*/function 
           form.append('name', document.getElementById('name').value);
           form.append('email', document.getElementById('email').value);
           form.append('photo', document.getElementById('photo').files[0]);
-          console.log(form);
-          _context.next = 9;
+          // console.log(form);
+          _context.next = 8;
           return (0, _updateSettings.updateSettings)(form, 'data');
-        case 9:
+        case 8:
           document.querySelector('.btn--save-settings').textContent = 'SAVE SETTINGS';
-        case 10:
+        case 9:
         case "end":
           return _context.stop();
       }
